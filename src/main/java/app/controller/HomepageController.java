@@ -11,7 +11,6 @@ public class HomepageController {
 
     @RequestMapping("/")
     public String index(Map<String, Object> model) {
-        System.out.println("indexindexindexindexindexindexindex");
         return "index";
     }
 }
