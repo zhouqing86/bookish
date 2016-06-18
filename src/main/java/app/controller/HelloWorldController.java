@@ -1,15 +1,16 @@
-package controller;
+package app.controller;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HomepageController {
+public class HelloWorldController {
 
-    @RequestMapping("/")
+    @RequestMapping("/hello")
     @ResponseBody
-    public String index() {
-        return "Index page";
+    public String hello() {
+        return "Hello World";
     }
 }
