@@ -3,13 +3,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<html lang="en">
 <head>
     <title>Bookish</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body>
+<br>
 <div class="container">
     <div class="row">
         <div class="span8">
@@ -17,20 +16,22 @@
                 Brand
             </a>
             <ul class="nav nav-pills">
-                <li role="presentation" class="active"><a href="#1">Books</a></li>
+                <li role="presentation"><a href="/">Homepage</a></li>
             </ul>
         </div>
-        <div class="tab-content">
-            <div class="tab-pane active" id="1">
-                <br/>
-                <c:forEach items="${books}" var="book">
-                    <a href="/book/${book.asin}">${book.title}</a>
-                    <br/>
-                    <hr/>
-                </c:forEach>
-            </div>
-        </div>
     </div>
+
+    Book Detail:
+    <br/>
+    <img src="http://localhost:9999/images/actuals/${book.asin}.jpg"/> <br/>
+    标题: ${book.title}<br/>
+    作者:
+    <c:forEach items="${book.authors}" var="author">
+        ${author} &nbsp;&nbsp;
+    </c:forEach>
+    </br>
+    出版日期: ${book.published_at} <br/>
+
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="/js/jquery-1.9.1.min.js"></script>
