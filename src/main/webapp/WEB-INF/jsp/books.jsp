@@ -1,3 +1,4 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -19,11 +20,12 @@
             <ul class="nav nav-pills">
                 <li role="presentation" class="active"><a href="#1">Books</a></li>
             </ul>
+            <hr/>
         </div>
         <div class="tab-content">
             <div class="tab-pane active" id="1">
                 <br/>
-                总页数: ${books.totalPages}, 记录条数: ${books.totalElements}
+                总页数: ${books.totalPages}, 总记录数: ${books.totalElements}
                 <br/>
                 <hr/>
                 <c:forEach items="${books.content}" var="book">

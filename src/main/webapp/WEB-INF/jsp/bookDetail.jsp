@@ -1,3 +1,4 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -19,8 +20,8 @@
                 <li role="presentation"><a href="/">Homepage</a></li>
             </ul>
         </div>
+        <hr/>
     </div>
-
     Book Detail:
     <br/>
     <img src="http://localhost:9999/images/actuals/${book.asin}.jpg"/> <br/>
