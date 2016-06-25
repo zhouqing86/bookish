@@ -29,12 +29,19 @@
                 <br/>
                 <hr/>
                 <c:forEach items="${books.content}" var="book">
-                    <a href="/book/${book.asin}">${book.title}</a>
-                    <br/>
-                    <hr/>
+                    <div class="col-sm-8 col-md-4 height-200">
+                        <img src="http://localhost:9999/images/thumbnails/${book.asin}.jpg" height="100"/> <br/>
+                        <a href="/book/${book.asin}">${book.title}</a>
+                        <br/>
+                        <c:forEach items="${book.authors}" var="author">
+                            ${author} &nbsp;&nbsp;
+                        </c:forEach>
+                        </br>
+                        出版日期: ${book.published_at} <br/>
+                    </div>
                 </c:forEach>
-
-                <ul id="books-pagination" class="pagination">
+                <div class="clear clearfix"/>
+                <ul id="books-pagination" class="pagination col-md-12">
                 </ul>
             </div>
         </div>
@@ -62,6 +69,12 @@
         }
     });
 </script>
+
+<style type="text/css">
+    .height-200 {
+        height:200px;
+    }
+</style>
 
 </body>
 </html>
