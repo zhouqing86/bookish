@@ -6,6 +6,8 @@ import app.model.BookDao;
 import app.service.BookService;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -36,6 +38,11 @@ public class BookDatabaseServiceImpl implements BookService{
     @Override
     public void save(List<Book> books) {
         bookDao.save(books);
+    }
+
+    @Override
+    public Page<Book> findByPagination(Pageable pageable) {
+        return bookDao.findAll(pageable);
     }
 
 }
